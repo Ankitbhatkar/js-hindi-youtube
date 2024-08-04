@@ -243,3 +243,33 @@ document.querySelector('#stop').addEventListener('click', stopChangingColor);
 
 
 ```
+## Project 6 Solution code
+
+```javascript
+//genrate a random color
+const randomColor =function () {
+  const hex="0123456789ABCDEF"
+  let color ="#";
+  for(let i=0;i<6;i++){
+   color += hex[Math.floor(Math.random()*16)]
+    }
+    return color;
+};
+let IntervalId;
+  startchangecolor = function (){
+    if(IntervalId==null){
+     IntervalId=setInterval(changeBGcolr,1000)}
+     function changeBGcolr(){
+       document.body.style.backgroundColor = randomColor();
+     }
+  }
+ 
+ stopchangecolor=function (){
+ clearInterval(IntervalId);
+  IntervalId=null
+ }
+  document.querySelector('#start').addEventListener('click',startchangecolor)
+  document.querySelector('#stop').addEventListener('click',stopchangecolor)
+ 
+
+```
